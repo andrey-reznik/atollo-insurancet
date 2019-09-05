@@ -4,5 +4,94 @@
 @import "utils/mixins.styl"
 @import "utils/extends.styl"
 @import "utils/keyframes.styl"
-@import "utils/grid.styl"
+@import "utils/smart-grid.styl"
 @import "utils/media.styl"
+
+reset()
+
+// Базовые стили
+.container
+    wrapper-full()
+    display flex
+    flex-direction: column
+
+.row
+    row-flex()
+
+// Типографика
+
+body
+    font-family: Merel Regular
+    font-weight normal
+    font-style normal
+
+h1, h2
+    font-size: 48px
+
+section
+    position absolute
+    top 0
+    left 0
+    width 100%
+
+.wrapper
+    position relative
+
+.outer-padding
+    padding 60px 120px
+
+.inner-padding
+    &_left
+        padding: 0 0 0 90px
+    &_right
+        padding 0 90px 0 0
+.left-side
+    background: url('/img/left_background.jpg') no-repeat
+    background-size: auto
+    background-attachment fixed
+    background-position left top
+    height 100vh
+    width 50%
+
+.logo-wrapper
+    col()
+    size-xl(6)
+
+nav
+    col()
+    size-xl(6)
+    .menu
+        display flex
+        flex-direction: row
+        justify-content flex-end
+        &__item
+            margin-right 78px
+            &:last-child
+                margin-right 0
+            &:first-child
+                margin-right auto
+        &__link
+            font-family: Merel Medium
+            font-size: 17px
+            color: rgba(52, 67, 76, 0.87)
+            text-decoration none
+
+.slide-title
+    col()
+    size-xl(6)
+    margin-top 128px
+    &__text
+        width 520px
+        font-family: Merel Regular
+
+.notice
+    col()
+    size-xl(6)
+    &__text
+        font-family: Merel Bold
+        font-size: 22px
+        line-height: 29px
+        width 470px
+
+.push-to-bottom
+    align-self: flex-end

@@ -1,8 +1,24 @@
 {
-  "navPages": {
-    "main": {
-      "title": "Home",
-      "link": "/"
-    }
-  }
+    "navHeader": [
+        {
+            "name": "home",
+            "title": "Главная",
+            "link": "#"
+        },
+        {
+            "name": "about",
+            "title": "О компании",
+            "link": "#"
+        },
+        {
+            "name": "services",
+            "title": "Услуги",
+            "link": "#"
+        },
+        {
+            "name": "contacts",
+            "title": "Контакты",
+            "link": "#"
+        }
+    ]
 }

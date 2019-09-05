@@ -1,3 +1,4 @@
+<!-- slide -->
 # Work Gulp template
 ### Installation
 ```

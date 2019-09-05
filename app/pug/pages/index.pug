@@ -1,6 +1,26 @@
 extends ../layout/main
 
 block variables
-    - var title = 'Главная'
+    - var title = content.home.title
 
 block content
+    +b.left-side._big
+    +b.right-side._big
+
+    section.home
+        .container.outer-padding
+            .row
+                +b.logo-wrapper.inner-padding_right
+                    +e.IMG(src= content.home.home_screen.logo).logo    
+                nav.inner-padding_left
+                    +b.UL.menu
+                        each nav_item in nav.navHeader
+                            +e.LI.item
+                                +e.A(href= nav_item.link).link= nav_item.title
+            .row
+                +b.slide-title
+                    +e.H1.text= content.home.home_screen.title
+            .row.push-to-bottom
+                +b.notice
+                    +e.P.text= content.home.home_screen.notice
+                    +e.SPAN.year= content.yaer

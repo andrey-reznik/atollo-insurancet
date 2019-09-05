@@ -28,10 +28,9 @@ wrapper-full()
     padding-left $fields
     padding-right $fields
 
-    sm-block(@block{
+    +sm-block()
         padding-left $fields_sm
         padding-right $fields_sm
-    })
 
 row-offsets()
     margin-left ($offset_one_side * -1)
@@ -258,53 +257,68 @@ xl($name, $value)
     @media screen and (max-width: $break_xl)
         {$name} $value
 
-xl-block($content)
+xl-block()
     @media screen and (max-width: $break_xl)
-        {$content}
+        {block}
 
 lg($name, $value)
     @media screen and (max-width: $break_lg)
         {$name} $value
 
-lg-block($content)
+lg-block()
     @media screen and (max-width: $break_lg)
-        {$content}
+        {block}
 
 md($name, $value)
     @media screen and (max-width: $break_md)
         {$name} $value
 
-md-block($content)
+md-block()
     @media screen and (max-width: $break_md)
-        {$content}
+        {block}
 
 sm($name, $value)
     @media screen and (max-width: $break_sm)
         {$name} $value
 
-sm-block($content)
+sm-block()
     @media screen and (max-width: $break_sm)
-        {$content}
+        {block}
 
 xs($name, $value)
     @media screen and (max-width: $break_xs)
         {$name} $value
 
-xs-block($content)
+xs-block()
     @media screen and (max-width: $break_xs)
-        {$content}
+        {block}
 
-from($min_width, $content)
+from($min_width)
     @media screen and (min-width: $min_width)
-        {$content}
+        {block}
 
-to($max_width, $content)
+to($max_width)
     @media screen and (max-width: $max_width)
-        {$content}
+        {block}
 
-from-to($min_width, $max_width, $content)
+from-to($min_width, $max_width)
     @media screen and (min-width: $min_width) and (max-width: $max_width)
-        {$content}
+        {block}
+
+u-row-flex($offset)
+    display flex
+    flex-wrap wrap
+    margin-left ($offset / -2)
+    margin-right ($offset / -2)
+
+u-col($offset)
+    box-sizing border-box
+    word-wrap break-word
+    margin-left ($offset / 2)
+    margin-right ($offset / 2)
+
+u-size($n, $columns, $offset)
+    width "calc(100% / %s * %s - %s)" % ($columns $n $offset)
 
 reset()
     body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td
